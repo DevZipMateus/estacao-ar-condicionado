@@ -117,6 +117,21 @@ a { text-decoration: none; color: inherit; }
   text-transform: uppercase;
   padding: 5px 14px;
   border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.section-tag::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -80%;
+  width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.45), transparent);
+  animation: tagShine 3.5s ease-in-out infinite;
+}
+@keyframes tagShine {
+  0%   { left: -80%; }
+  45%  { left: 160%; }
+  100% { left: 160%; }
 }
 .section-dark .section-tag {
   background: rgba(14,165,233,.15);
@@ -158,6 +173,8 @@ a { text-decoration: none; color: inherit; }
   padding: 14px 28px;
   border-radius: var(--radius);
   transition: background var(--trans), transform var(--trans), box-shadow var(--trans);
+  position: relative;
+  overflow: hidden;
 }
 .btn-amber:hover { background: var(--amber-dark); color: var(--white); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(245,158,11,.4); }
 
@@ -165,6 +182,8 @@ a { text-decoration: none; color: inherit; }
   display: inline-flex;
   align-items: center;
   gap: 9px;
+  position: relative;
+  overflow: hidden;
   background: rgba(255,255,255,.10);
   color: var(--white);
   font-family: var(--font-head);
@@ -409,10 +428,18 @@ a { text-decoration: none; color: inherit; }
   font-family: var(--font-head);
   font-size: clamp(2rem, 6vw, 4rem);
   font-weight: 900;
-  color: var(--white);
+  background: linear-gradient(90deg, #fff 0%, #38BDF8 28%, #fff 48%, #F59E0B 68%, #fff 100%);
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: titleShimmer 6s linear infinite;
   line-height: 1.1;
   margin-bottom: 12px;
-  text-shadow: 0 2px 20px rgba(0,0,0,.4);
+}
+@keyframes titleShimmer {
+  from { background-position: 0% center; }
+  to   { background-position: 250% center; }
 }
 
 .hero-sub {
@@ -654,6 +681,11 @@ a { text-decoration: none; color: inherit; }
   flex-shrink: 0;
   z-index: 1;
   box-shadow: 0 0 0 4px rgba(14,165,233,.2);
+  animation: dotPulse 2.5s ease-in-out infinite;
+}
+@keyframes dotPulse {
+  0%, 100% { box-shadow: 0 0 0 4px rgba(14,165,233,.2); }
+  50%       { box-shadow: 0 0 0 10px rgba(14,165,233,.08), 0 0 0 4px rgba(14,165,233,.35); }
 }
 
 .timeline-content {
@@ -809,6 +841,88 @@ a { text-decoration: none; color: inherit; }
   transition: background var(--trans), transform var(--trans);
 }
 .wpp-float:hover { background: #1EBE5A; transform: scale(1.08); }
+
+/* ── EFEITOS ADICIONAIS ──────────────────────────────────────── */
+
+/* Bounce no ícone ao hover nos cards */
+.servico-card:hover .servico-icon,
+.diferencial-card:hover .diferencial-icon {
+  animation: iconBounce .45s ease;
+}
+@keyframes iconBounce {
+  0%   { transform: scale(1) rotate(0deg); }
+  35%  { transform: scale(1.25) rotate(-12deg); }
+  70%  { transform: scale(.95) rotate(6deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+/* Scan line sutil no hero */
+#hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -60%;
+  width: 40%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(14,165,233,.04), transparent);
+  animation: heroScan 7s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+@keyframes heroScan {
+  0%   { left: -60%; }
+  100% { left: 160%; }
+}
+
+/* Glow pulsante nos stats da hero */
+.stat-num {
+  animation: statGlow 3s ease-in-out infinite;
+}
+@keyframes statGlow {
+  0%, 100% { text-shadow: 0 0 8px rgba(56,189,248,.4); }
+  50%       { text-shadow: 0 0 20px rgba(56,189,248,.7), 0 0 40px rgba(56,189,248,.3); }
+}
+
+/* Linha da timeline crescendo */
+.timeline::before {
+  animation: lineGrow 1.5s ease-out both;
+  transform-origin: top;
+}
+@keyframes lineGrow {
+  from { transform: scaleY(0); }
+  to   { transform: scaleY(1); }
+}
+
+/* Ripple nos botões */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,.28);
+  transform: scale(0);
+  animation: rippleAnim .65s linear;
+  pointer-events: none;
+}
+@keyframes rippleAnim {
+  to { transform: scale(4); opacity: 0; }
+}
+
+/* Stagger padrão para nth-child dos grids */
+.servicos-grid    .servico-card:nth-child(2)    { transition-delay: .08s; }
+.servicos-grid    .servico-card:nth-child(3)    { transition-delay: .16s; }
+.servicos-grid    .servico-card:nth-child(4)    { transition-delay: .24s; }
+.servicos-grid    .servico-card:nth-child(5)    { transition-delay: .32s; }
+.servicos-grid    .servico-card:nth-child(6)    { transition-delay: .40s; }
+.servicos-grid    .servico-card:nth-child(7)    { transition-delay: .48s; }
+.diferenciais-grid .diferencial-card:nth-child(2) { transition-delay: .08s; }
+.diferenciais-grid .diferencial-card:nth-child(3) { transition-delay: .16s; }
+.diferenciais-grid .diferencial-card:nth-child(4) { transition-delay: .24s; }
+.diferenciais-grid .diferencial-card:nth-child(5) { transition-delay: .32s; }
+.diferenciais-grid .diferencial-card:nth-child(6) { transition-delay: .40s; }
+.depo-grid         .depo-card:nth-child(2)         { transition-delay: .1s; }
+.depo-grid         .depo-card:nth-child(3)         { transition-delay: .2s; }
+.timeline-item:nth-child(2) { transition-delay: .1s; }
+.timeline-item:nth-child(3) { transition-delay: .2s; }
+.timeline-item:nth-child(4) { transition-delay: .3s; }
+.timeline-item:nth-child(5) { transition-delay: .4s; }
+.timeline-item:nth-child(6) { transition-delay: .5s; }
 
 /* ── SCROLL REVEAL ───────────────────────────────────────────── */
 .reveal, .reveal-left, .reveal-right, .reveal-scale {

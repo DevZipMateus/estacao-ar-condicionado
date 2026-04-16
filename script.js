@@ -122,3 +122,51 @@ function updateActiveNav() {
 }
 
 window.addEventListener('scroll', updateActiveNav, { passive: true });
+
+/* ── CONTADOR ANIMADO NAS STATS ─────────────────────────────── */
+(function animateCounters() {
+  const stats = document.querySelectorAll('.stat-num');
+
+  const counterObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el  = entry.target;
+      const raw = el.textContent.trim();
+      const match = raw.match(/^([^0-9]*)(\d+)([^0-9]*)$/);
+      if (!match) return;
+      const [, prefix, numStr, suffix] = match;
+      const target  = parseInt(numStr, 10);
+      const start   = target > 200 ? target - 20 : 0;
+      let current   = start;
+      const step    = Math.ceil((target - start) / 40);
+
+      const tick = setInterval(() => {
+        current = Math.min(current + step, target);
+        el.textContent = prefix + current + suffix;
+        if (current >= target) clearInterval(tick);
+      }, 28);
+
+      counterObserver.unobserve(el);
+    });
+  }, { threshold: 0.7 });
+
+  stats.forEach(s => counterObserver.observe(s));
+})();
+
+/* ── RIPPLE NOS BOTÕES ──────────────────────────────────────── */
+(function addRipple() {
+  document.querySelectorAll('.btn-amber, .btn-outline-white, .btn-sky').forEach(btn => {
+    btn.addEventListener('click', e => {
+      const rect   = btn.getBoundingClientRect();
+      const size   = Math.max(rect.width, rect.height);
+      const ripple = document.createElement('span');
+      ripple.className = 'ripple';
+      ripple.style.cssText =
+        `width:${size}px;height:${size}px;` +
+        `left:${e.clientX - rect.left - size / 2}px;` +
+        `top:${e.clientY - rect.top  - size / 2}px;`;
+      btn.appendChild(ripple);
+      setTimeout(() => ripple.remove(), 650);
+    });
+  });
+})();
