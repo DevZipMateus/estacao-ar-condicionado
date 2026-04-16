@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estação do Ar Condicionado</title>
+  <meta name="description" content="Especialistas em ar-condicionado automotivo no Distrito Federal. Diagnóstico eletrônico, recarga de gás, higienização, detecção de vazamentos e manutenção preventiva para carros, caminhões e frotas.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Estação do Ar Condicionado">
+  <meta property="og:description" content="Especialistas em ar-condicionado automotivo no Distrito Federal. Diagnóstico preciso, tecnologia de ponta, solução definitiva.">
+  <meta property="og:image" content="images/og-image.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.estacaodoarcondicionado.com.br">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Estação do Ar Condicionado">
+  <meta name="twitter:description" content="Especialistas em ar-condicionado automotivo no Distrito Federal.">
+  <meta name="twitter:image" content="images/og-image.png">
+
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header id="header">
+  <div class="header-inner">
+    <a href="#hero" class="header-logo">
+      <img src="images/logo.png" alt="Estação do Ar Condicionado">
+    </a>
+    <nav class="header-nav" id="desktopNav">
+      <a href="#servicos"    class="nav-link">Serviços</a>
+      <a href="#sobre"       class="nav-link">Sobre</a>
+      <a href="#diferenciais" class="nav-link">Diferenciais</a>
+      <a href="#historia"    class="nav-link">História</a>
+      <a href="#depoimentos" class="nav-link">Depoimentos</a>
+      <a href="#contato"     class="nav-link">Contato</a>
+      <a href="https://wa.me/5561981514200?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener" class="nav-cta">Solicitar orçamento</a>
+    </nav>
+    <button class="hamburger" id="menuToggle" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Menu mobile -->
+<nav id="navMenu">
+  <button class="nav-close" id="navClose" aria-label="Fechar menu"><i class="fas fa-times"></i></button>
+  <a href="#servicos"     class="nav-link">Serviços</a>
+  <a href="#sobre"        class="nav-link">Sobre</a>
+  <a href="#diferenciais" class="nav-link">Diferenciais</a>
+  <a href="#historia"     class="nav-link">História</a>
+  <a href="#depoimentos"  class="nav-link">Depoimentos</a>
+  <a href="#contato"      class="nav-link">Contato</a>
+  <a href="https://wa.me/5561981514200?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener" class="nav-wpp-mob"><i class="fab fa-whatsapp"></i> Solicitar orçamento</a>
+</nav>
+<div id="navOverlay"></div>
+
+<!-- ===== HERO ===== -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-particles" id="heroParticles"></div>
+  <div class="container hero-content">
+    <div class="hero-badge reveal"><i class="fas fa-snowflake"></i> Especialistas em A/C Automotivo</div>
+    <h1 class="hero-title reveal">Estação do Ar Condicionado</h1>
+    <p class="hero-sub reveal">A ESTAÇÃO certa para o seu veículo.</p>
+    <p class="hero-desc reveal">Diagnóstico eletrônico preciso, tecnologia de última geração e solução definitiva para o ar-condicionado do seu carro, caminhão ou frota — no Distrito Federal.</p>
+    <div class="hero-btns reveal">
+      <a href="https://wa.me/5561981514200?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener" class="btn-amber"><i class="fab fa-whatsapp"></i> Solicitar orçamento</a>
+      <a href="#servicos" class="btn-outline-white">Ver serviços</a>
+    </div>
+    <div class="hero-stats reveal">
+      <div class="hero-stat"><span class="stat-num">7+</span><span class="stat-label">Serviços especializados</span></div>
+      <div class="hero-stat"><span class="stat-num">2024</span><span class="stat-label">Fundada no DF</span></div>
+      <div class="hero-stat"><span class="stat-num">100%</span><span class="stat-label">Diagnóstico preciso</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVIÇOS ===== -->
+<section id="servicos" class="section">
+  <div class="container">
+    <div class="section-tag reveal">Nossos serviços</div>
+    <h2 class="section-title reveal">Soluções completas para o seu A/C</h2>
+    <p class="section-sub reveal">Do diagnóstico à solução definitiva — atendemos veículos de passeio, caminhões e frotas com tecnologia avançada.</p>
+    <div class="servicos-grid">
+
+      <div class="servico-card reveal">
+        <div class="servico-icon"><i class="fas fa-laptop-medical"></i></div>
+        <h3>Diagnóstico eletrônico</h3>
+        <p>Inspeção completa do sistema com equipamentos eletrônicos de última geração para identificar o problema real.</p>
+      </div>
+
+      <div class="servico-card reveal">
+        <div class="servico-icon"><i class="fas fa-weight-hanging"></i></div>
+        <h3>Recarga de gás</h3>
+        <p>Recarga com precisão de balança — quantidade exata conforme especificação do fabricante, sem desperdício.</p>
+      </div>
+
+      <div class="servico-card reveal">
+        <div class="servico-icon"><i class="fas fa-tools"></i></div>
+        <h3>Troca de peças do A/C</h3>
+        <p>Substituição de compressor, condensador, evaporador e demais componentes com testes em equipamentos de ponta.</p>
+      </div>
+
+      <div class="servico-card reveal">
+        <div class="servico-icon"><i class="fas fa-wind"></i></div>
+        <h3>Higienização e ozonização</h3>
+        <p>Eliminação de fungos, bactérias e odores do sistema de ar-condicionado. Ar limpo e saudável para sua cabine.</p>
+      </div>
+
+      <div class="servico-card reveal">
+        <div class="servico-icon"><i class="fas fa-search"></i></div>
+        <h3>Detecção de vazamentos</h3>
+        <p>Localização precisa de vazamentos com detector eletrônico e luz UV — sem tentativas às cegas.</p>
+      </div>
+
+      <div class="servico-card reveal">
+        <div class="servico-icon"><i class="fas fa-filter"></i></div>
+        <h3>Filtro de cabine</h3>
+        <p>Troca do filtro de ar da cabine para garantir qualidade do ar no interior do veículo e proteção do sistema.</p>
+      </div>
+
+      <div class="servico-card reveal">
+        <div class="servico-icon"><i class="fas fa-calendar-check"></i></div>
+        <h3>Manutenção preventiva</h3>
+        <p>Revisão periódica completa do sistema de A/C para evitar falhas, prolongar a vida útil e garantir eficiência.</p>
+      </div>
+
+    </div>
+    <div class="servicos-cta reveal">
+      <a href="https://wa.me/5561981514200?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20servi%C3%A7o." target="_blank" rel="noopener" class="btn-amber"><i class="fab fa-whatsapp"></i> Agendar serviço</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SOBRE ===== -->
+<section id="sobre" class="section section-dark">
+  <div class="container sobre-grid">
+    <div class="sobre-left reveal-left">
+      <div class="section-tag">Quem somos</div>
+      <h2 class="section-title light">Nascemos de uma experiência real</h2>
+      <p>Tudo começou com uma frustração — e virou um propósito. Nosso fundador percorreu dezenas de oficinas no Distrito Federal sem encontrar quem resolvesse de vez o problema do ar-condicionado do seu caminhão. A resposta era sempre a mesma: recarregar o gás e pronto.</p>
+      <p>Foi dessa insatisfação que nasceu a Estação do Ar Condicionado: uma empresa criada por quem esteve do outro lado do balcão e entende o que o cliente realmente precisa — diagnóstico correto, solução definitiva e confiança em cada atendimento.</p>
+      <div class="sobre-badges">
+        <div class="sobre-badge"><i class="fas fa-map-marker-alt"></i> Distrito Federal</div>
+        <div class="sobre-badge"><i class="fas fa-clock"></i> Seg–Sex 8h–18h · Sáb 8h–12h</div>
+        <div class="sobre-badge"><i class="fas fa-certificate"></i> Formação SENAI + Densul + Super Ar</div>
+      </div>
+    </div>
+    <div class="sobre-right reveal-right">
+      <div class="sobre-card-wrap">
+        <div class="sobre-info-card">
+          <div class="info-icon"><i class="fas fa-bullseye"></i></div>
+          <div>
+            <strong>Missão</strong>
+            <p>Oferecer soluções automotivas de alta qualidade unindo expertise técnica e tecnologia de ponta para diagnósticos precisos.</p>
+          </div>
+        </div>
+        <div class="sobre-info-card">
+          <div class="info-icon"><i class="fas fa-eye"></i></div>
+          <div>
+            <strong>Visão</strong>
+            <p>Ser referência em serviços automotivos no DF, reconhecida pela excelência técnica e pela confiança construída com cada cliente.</p>
+          </div>
+        </div>
+        <div class="sobre-info-card">
+          <div class="info-icon"><i class="fas fa-star"></i></div>
+          <div>
+            <strong>Valores</strong>
+            <p>Confiança, excelência técnica, tecnologia, inovação, comprometimento e respeito ao cliente em cada atendimento.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DIFERENCIAIS ===== -->
+<section id="diferenciais" class="section">
+  <div class="container">
+    <div class="section-tag reveal">Por que nos escolher</div>
+    <h2 class="section-title reveal">Nossos diferenciais</h2>
+    <p class="section-sub reveal">Não somos mais uma loja de recarga de gás. Somos especialistas que chegam à raiz do problema.</p>
+    <div class="diferenciais-grid">
+
+      <div class="diferencial-card reveal">
+        <div class="diferencial-num">01</div>
+        <div class="diferencial-icon"><i class="fas fa-microchip"></i></div>
+        <h3>Diagnóstico eletrônico preciso</h3>
+        <p>Equipamentos de última geração que identificam o problema real, sem chutes e sem serviços desnecessários.</p>
+      </div>
+
+      <div class="diferencial-card reveal">
+        <div class="diferencial-num">02</div>
+        <div class="diferencial-icon"><i class="fas fa-graduation-cap"></i></div>
+        <h3>Formação contínua</h3>
+        <p>SENAI, Densul, Formação Avançada em Goiânia e Super Ar em SP — capacitação constante para acompanhar a evolução do setor.</p>
+      </div>
+
+      <div class="diferencial-card reveal">
+        <div class="diferencial-num">03</div>
+        <div class="diferencial-icon"><i class="fas fa-shield-alt"></i></div>
+        <h3>Transparência total</h3>
+        <p>Diagnóstico claro, orçamento detalhado e explicação sem jargões técnicos. Você sabe exatamente o que está pagando e por quê.</p>
+      </div>
+
+      <div class="diferencial-card reveal">
+        <div class="diferencial-num">04</div>
+        <div class="diferencial-icon"><i class="fas fa-truck"></i></div>
+        <h3>Carros, caminhões e frotas</h3>
+        <p>Atendemos desde veículos de passeio até frotas pesadas — com a mesma dedicação e qualidade técnica.</p>
+      </div>
+
+      <div class="diferencial-card reveal">
+        <div class="diferencial-num">05</div>
+        <div class="diferencial-icon"><i class="fas fa-check-double"></i></div>
+        <h3>Solução definitiva</h3>
+        <p>Não tratamos sintomas — chegamos à causa raiz. O problema é resolvido de uma vez, com garantia de qualidade.</p>
+      </div>
+
+      <div class="diferencial-card reveal">
+        <div class="diferencial-num">06</div>
+        <div class="diferencial-icon"><i class="fas fa-user-check"></i></div>
+        <h3>Atendimento personalizado</h3>
+        <p>Cada veículo e cada cliente é único. Nosso atendimento é individualizado, humanizado e focado na sua necessidade.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== HISTÓRIA ===== -->
+<section id="historia" class="section section-dark">
+  <div class="container">
+    <div class="section-tag reveal">Nossa trajetória</div>
+    <h2 class="section-title light reveal">Uma história construída com propósito</h2>
+    <p class="section-sub light reveal">De um problema não resolvido a uma referência técnica no Distrito Federal.</p>
+
+    <div class="timeline">
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"><i class="fas fa-car"></i></div>
+        <div class="timeline-content">
+          <span class="timeline-year">2013</span>
+          <h3>O problema que virou sonho</h3>
+          <p>Nosso fundador adquire um Ford 2429 zero km. O ar-condicionado instalado pela própria loja da fabricante apresenta vazamento — e nenhuma oficina do DF resolve de verdade. Nasce a ideia de criar algo diferente.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"><i class="fas fa-book"></i></div>
+        <div class="timeline-content">
+          <span class="timeline-year">2018</span>
+          <h3>Primeiro passo: o conhecimento</h3>
+          <p>Primeiro curso de ar-condicionado automotivo no SENAI — o início de uma jornada de especialização técnica dedicada a resolver o que outros não conseguiam.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"><i class="fas fa-award"></i></div>
+        <div class="timeline-content">
+          <span class="timeline-year">Jan 2024</span>
+          <h3>Capacitação Densul</h3>
+          <p>Formação aprofundada na Densul, ampliando o conhecimento técnico para diagnósticos ainda mais precisos e abrangentes.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"><i class="fas fa-store"></i></div>
+        <div class="timeline-content">
+          <span class="timeline-year">Fev 2024</span>
+          <h3>Abertura da Estação</h3>
+          <p>Abre as portas a Estação do Ar Condicionado, no Distrito Federal — a loja que nosso fundador sempre quis encontrar, mas precisou criar.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"><i class="fas fa-certificate"></i></div>
+        <div class="timeline-content">
+          <span class="timeline-year">Set 2024</span>
+          <h3>Formação Avançada em Goiânia</h3>
+          <p>Conclusão da formação avançada em A/C automotivo — aperfeiçoamento técnico para veículos de nova geração e tecnologias emergentes.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"><i class="fas fa-rocket"></i></div>
+        <div class="timeline-content">
+          <span class="timeline-year">Out 2024</span>
+          <h3>Treinamento na Super Ar — São Paulo</h3>
+          <p>Treinamento em um dos centros de referência em tecnologia automotiva do país. A busca pela excelência não tem fim.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== DEPOIMENTOS ===== -->
+<section id="depoimentos" class="section">
+  <div class="container">
+    <div class="section-tag reveal">Depoimentos</div>
+    <h2 class="section-title reveal">O que nossos clientes dizem</h2>
+    <p class="section-sub reveal">A confiança dos nossos clientes é o nosso maior resultado.</p>
+    <div class="depo-grid">
+
+      <div class="depo-card reveal">
+        <div class="depo-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p>"Fui em várias oficinas e ninguém resolvia o problema do meu ar-condicionado. Na Estação fizeram o diagnóstico correto e resolveram de uma vez. Nunca mais tive problema!"</p>
+        <div class="depo-autor"><strong>Carlos M.</strong> <span>Proprietário de caminhão</span></div>
+      </div>
+
+      <div class="depo-card reveal">
+        <div class="depo-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p>"Atendimento transparente e profissional. Explicaram tudo o que precisava ser feito antes de começar. O ar do meu carro está gelando como nunca. Super recomendo!"</p>
+        <div class="depo-autor"><strong>Ana Paula R.</strong> <span>Cliente particular</span></div>
+      </div>
+
+      <div class="depo-card reveal">
+        <div class="depo-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p>"Gerencio uma frota de utilitários e a Estação cuida de todos eles. Diagnóstico preciso, prazo cumprido e qualidade impecável. É a parceria que procurava no DF."</p>
+        <div class="depo-autor"><strong>Roberto S.</strong> <span>Gestor de frota</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTATO ===== -->
+<section id="contato" class="section section-dark">
+  <div class="container contato-grid">
+    <div class="contato-info reveal-left">
+      <div class="section-tag">Entre em contato</div>
+      <h2 class="section-title light">Fale com a gente</h2>
+      <p class="light-text">Agende seu diagnóstico ou tire suas dúvidas. Atendimento rápido e personalizado.</p>
+
+      <div class="contato-itens">
+        <div class="contato-item">
+          <div class="contato-icon"><i class="fab fa-whatsapp"></i></div>
+          <div>
+            <strong>WhatsApp</strong>
+            <a href="https://wa.me/5561981514200?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">(61) 98151-4200</a>
+          </div>
+        </div>
+        <div class="contato-item">
+          <div class="contato-icon"><i class="fas fa-envelope"></i></div>
+          <div>
+            <strong>E-mail</strong>
+            <a href="mailto:karladonini@gmail.com">karladonini@gmail.com</a>
+          </div>
+        </div>
+        <div class="contato-item">
+          <div class="contato-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div>
+            <strong>Endereço</strong>
+            <span>ADE, Conjunto 06, Lote 01/02 — Distrito Federal</span>
+          </div>
+        </div>
+        <div class="contato-item">
+          <div class="contato-icon"><i class="fas fa-clock"></i></div>
+          <div>
+            <strong>Horário</strong>
+            <span>Seg–Sex: 8h–18h · Sábado: 8h–12h</span>
+          </div>
+        </div>
+        <div class="contato-item">
+          <div class="contato-icon"><i class="fab fa-instagram"></i></div>
+          <div>
+            <strong>Instagram</strong>
+            <a href="https://www.instagram.com/estacao.ar" target="_blank" rel="noopener">@estacao.ar</a>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://wa.me/5561981514200?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener" class="btn-amber mt-24"><i class="fab fa-whatsapp"></i> Solicitar orçamento agora</a>
+    </div>
+
+    <div class="contato-mapa reveal-right">
+      <iframe
+        src="https://maps.google.com/maps?q=ADE+Conjunto+06+Lote+01+Brasilia+DF&t=&z=15&ie=UTF8&iwloc=&output=embed"
+        width="100%"
+        height="100%"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        title="Localização Estação do Ar Condicionado"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer id="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img src="images/logo.png" alt="Estação do Ar Condicionado" class="footer-logo">
+      <p>A ESTAÇÃO certa para o seu veículo.</p>
+    </div>
+    <div class="footer-links">
+      <a href="#servicos">Serviços</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#diferenciais">Diferenciais</a>
+      <a href="#historia">História</a>
+      <a href="#contato">Contato</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/estacao.ar" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/5561981514200" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Estação do Ar Condicionado · CNPJ 28.466.184/0001-07</span>
+  </div>
+</footer>
+
+<!-- ===== WA FLUTUANTE ===== -->
+<a href="https://wa.me/5561981514200?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20servi%C3%A7os%20da%20Esta%C3%A7%C3%A3o%20do%20Ar%20Condicionado." target="_blank" rel="noopener" class="wpp-float" aria-label="WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- ===== RODAPÉ MONTESITE ===== -->
+<div id="montesite-footer-badge"></div>
+<script src="https://vaabpicspdbolvutnscp.supabase.co/functions/v1/get-footer-iframe"></script>
+
+<script src="script.js"></script>
+</body>
+</html>
