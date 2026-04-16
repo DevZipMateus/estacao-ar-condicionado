@@ -941,29 +941,52 @@ a { text-decoration: none; color: inherit; }
 
 /* ── RESPONSIVIDADE ──────────────────────────────────────────── */
 
-/* 1440px+ */
-@media (min-width: 1440px) {
+/* 2560px+ — 4K / Widescreen */
+@media (min-width: 2560px) {
+  .container { max-width: 1700px; }
+  .section { padding: 120px 0; }
+  .servicos-grid { grid-template-columns: repeat(4, 1fr); }
+  .depo-grid { grid-template-columns: repeat(3, 1fr); }
+  #banner-divisor { padding: 130px 0; }
+}
+
+/* 1440px – 2559px */
+@media (min-width: 1440px) and (max-width: 2559px) {
   .container { max-width: 1280px; }
   .servicos-grid { grid-template-columns: repeat(4, 1fr); }
 }
 
-/* ≤1199px */
-@media (max-width: 1199px) {
-  .diferenciais-grid { grid-template-columns: repeat(2, 1fr); }
+/* 1200px – 1439px */
+@media (min-width: 1200px) and (max-width: 1439px) {
+  .servicos-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
-/* ≤1023px */
+/* ≤1199px — laptop pequeno */
+@media (max-width: 1199px) {
+  .diferenciais-grid { grid-template-columns: repeat(2, 1fr); }
+  .servicos-grid     { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ≤1023px — tablet landscape */
 @media (max-width: 1023px) {
-  .sobre-grid     { grid-template-columns: 1fr; gap: 40px; }
-  .contato-grid   { grid-template-columns: 1fr; gap: 40px; }
-  .contato-mapa   { height: 320px; }
-  .sobre-left .section-title { text-align: center; }
-  .sobre-left .section-tag   { margin: 0 auto 12px; }
-  .sobre-left p              { text-align: center; }
-  .sobre-badges              { align-items: center; }
+  .sobre-grid   { grid-template-columns: 1fr; gap: 40px; }
+  .contato-grid { grid-template-columns: 1fr; gap: 40px; }
+  .contato-mapa { height: 320px; }
+
+  .sobre-left .section-title  { text-align: center; }
+  .sobre-left .section-tag    { margin: 0 auto 12px; }
+  .sobre-left p               { text-align: center; }
+  .sobre-badges               { align-items: center; }
+
   .contato-info .section-title { text-align: center; }
   .contato-info .section-tag   { margin: 0 auto 12px; }
-  .contato-itens { align-items: flex-start; }
+
+  #banner-divisor { padding: 84px 0; }
+  .banner-div-content h2 { font-size: clamp(1.5rem, 4vw, 2.2rem); }
+
+  /* reveal-left/right vira translateY para não causar scroll horizontal */
+  .reveal-left  { transform: translateY(28px); }
+  .reveal-right { transform: translateY(28px); }
 
   /* Desativa parallax em iOS/Android */
   #sobre, #historia, #depoimentos, #contato, #banner-divisor {
@@ -971,60 +994,171 @@ a { text-decoration: none; color: inherit; }
   }
 }
 
-/* ≤768px — tablet / mobile */
+/* ≤768px — tablet portrait */
 @media (max-width: 768px) {
-  .section { padding: 72px 0; }
+  .section { padding: 64px 0; }
 
-  .header-nav { display: none; }
-  .hamburger  { display: flex; }
+  /* Header */
+  .header-nav   { display: none; }
+  .hamburger    { display: flex; }
   .header-inner { height: 64px; }
 
-  .hero-stats { gap: 24px; }
-  .hero-title { font-size: clamp(1.7rem, 7vw, 2.6rem); }
+  /* Hero */
+  #hero { padding: 100px 0 64px; }
+  .hero-stats { gap: 28px; }
+  .hero-title { font-size: clamp(1.8rem, 6.5vw, 2.8rem); }
 
-  .servicos-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  /* Grids */
+  .servicos-grid     { grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .diferenciais-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-  .depo-grid { grid-template-columns: 1fr; }
+  .depo-grid         { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
 
+  /* Banner divisor */
+  #banner-divisor { padding: 72px 0; }
+  .banner-div-content h2 { font-size: clamp(1.4rem, 5vw, 2rem); }
+  .banner-div-content p  { font-size: .95rem; }
+
+  /* Timeline */
+  .timeline        { max-width: 100%; }
   .timeline::before { left: 20px; }
-  .timeline-dot { width: 42px; height: 42px; font-size: 14px; }
+  .timeline-dot    { width: 42px; height: 42px; font-size: 13px; }
+  .timeline-item   { gap: 20px; }
 
-  .footer-inner { flex-direction: column; align-items: flex-start; gap: 24px; }
-  .footer-links { gap: 16px; }
+  /* Contato */
+  .contato-mapa { height: 280px; }
 
-  .reveal-left,
-  .reveal-right { transform: translateY(28px); }
+  /* Footer */
+  .footer-inner  { flex-direction: column; align-items: flex-start; gap: 24px; }
+  .footer-links  { gap: 16px; flex-wrap: wrap; }
 
+  /* WA float */
   .wpp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; font-size: 22px; }
 }
 
-/* ≤480px */
-@media (max-width: 480px) {
-  .section { padding: 56px 0; }
-  .container { width: 92%; }
-  .header-inner { height: 60px; }
-  .header-logo img { height: 42px; }
+/* ≤580px — mobile grande */
+@media (max-width: 580px) {
+  .servicos-grid     { grid-template-columns: 1fr; gap: 14px; }
+  .diferenciais-grid { grid-template-columns: 1fr; gap: 14px; }
+  .depo-grid         { max-width: 100%; }
 
-  .hero-btns { flex-direction: column; align-items: center; }
-  .hero-stats { flex-direction: column; gap: 20px; }
+  .hero-stats { gap: 20px; }
+  .hero-badge { font-size: .74rem; padding: 5px 12px; }
 
-  .servicos-grid { grid-template-columns: 1fr; }
-  .diferenciais-grid { grid-template-columns: 1fr; }
-
-  .timeline-item { gap: 16px; }
-  .timeline-content { padding: 16px 18px; }
-
-  .contato-mapa { height: 260px; }
-  .footer-links { flex-direction: column; gap: 10px; }
-
-  .btn-amber,
-  .btn-outline-white,
-  .btn-sky { font-size: .88rem; padding: 13px 22px; }
+  #banner-divisor { padding: 64px 0; }
 }
 
-/* ≤360px */
+/* ≤480px — mobile padrão */
+@media (max-width: 480px) {
+  .section     { padding: 52px 0; }
+  .container   { width: 92%; }
+
+  /* Header */
+  .header-inner  { height: 60px; }
+  .header-logo img { height: 42px; }
+
+  /* Hero */
+  #hero { padding: 90px 0 52px; }
+  .hero-badge     { font-size: .7rem; padding: 4px 11px; gap: 6px; }
+  .hero-sub       { font-size: .95rem; }
+  .hero-desc      { font-size: .88rem; }
+  .hero-btns      { flex-direction: column; align-items: center; }
+  .hero-stats     { flex-direction: column; gap: 16px; padding-top: 28px; }
+  .stat-num       { font-size: 1.8rem; }
+
+  /* Banner */
+  #banner-divisor        { padding: 56px 0; }
+  .banner-div-content h2 { font-size: 1.35rem; }
+  .banner-div-content p  { font-size: .88rem; }
+
+  /* Serviços */
+  .servico-card   { padding: 26px 22px; }
+  .servico-icon   { width: 46px; height: 46px; font-size: 19px; }
+  .servico-card h3 { font-size: 1rem; }
+
+  /* Diferenciais */
+  .diferencial-card { padding: 26px 20px; }
+  .diferencial-num  { font-size: 2rem; }
+
+  /* Sobre */
+  .sobre-info-card { padding: 16px 16px; gap: 12px; }
+  .info-icon       { width: 36px; height: 36px; font-size: 14px; }
+
+  /* Timeline */
+  .timeline-item    { gap: 14px; }
+  .timeline-dot     { width: 38px; height: 38px; font-size: 12px; }
+  .timeline::before { left: 19px; }
+  .timeline-content { padding: 14px 16px; }
+  .timeline-content h3 { font-size: .9rem; }
+  .timeline-content p  { font-size: .82rem; }
+
+  /* Contato */
+  .contato-mapa { height: 240px; }
+  .contato-icon { width: 36px; height: 36px; font-size: 14px; }
+  .contato-item { gap: 12px; }
+
+  /* Footer */
+  .footer-links { flex-direction: column; gap: 10px; }
+  .footer-logo  { height: 40px; }
+
+  /* Botões */
+  .btn-amber,
+  .btn-outline-white,
+  .btn-sky { font-size: .87rem; padding: 12px 20px; }
+
+  /* WA float */
+  .wpp-float { width: 48px; height: 48px; font-size: 21px; }
+}
+
+/* ≤360px — mobile pequeno */
 @media (max-width: 360px) {
+  .container    { width: 94%; }
+  .header-inner { height: 56px; }
   .header-logo img { height: 36px; }
-  .hero-title { font-size: 1.6rem; }
-  .section-title { font-size: 1.5rem; }
+
+  /* Hero */
+  #hero { padding: 82px 0 44px; }
+  .hero-title  { font-size: 1.55rem; }
+  .hero-sub    { font-size: .88rem; }
+  .hero-desc   { font-size: .82rem; }
+  .hero-badge  { font-size: .65rem; padding: 4px 10px; }
+  .stat-num    { font-size: 1.55rem; }
+  .stat-label  { font-size: .72rem; }
+
+  /* Seções */
+  .section     { padding: 44px 0; }
+  .section-title { font-size: 1.4rem; }
+  .section-sub   { font-size: .88rem; }
+
+  /* Cards */
+  .servico-card    { padding: 22px 16px; }
+  .servico-icon    { width: 42px; height: 42px; font-size: 17px; }
+  .servico-card h3 { font-size: .92rem; }
+  .servico-card p  { font-size: .82rem; }
+
+  .diferencial-card { padding: 22px 16px; }
+  .diferencial-num  { font-size: 1.8rem; }
+  .diferencial-card h3 { font-size: .9rem; }
+
+  /* Timeline */
+  .timeline-dot     { width: 34px; height: 34px; font-size: 11px; }
+  .timeline::before { left: 17px; }
+  .timeline-item    { gap: 12px; }
+  .timeline-content { padding: 12px 14px; }
+
+  /* Depoimentos */
+  .depo-card { padding: 20px 16px; }
+
+  /* Contato */
+  .contato-item strong { font-size: .8rem; }
+  .contato-item a,
+  .contato-item span   { font-size: .82rem; }
+  .contato-mapa        { height: 210px; }
+
+  /* Footer */
+  .footer-brand p { font-size: .78rem; }
+  .footer-links a { font-size: .78rem; }
+  .footer-bottom  { font-size: .72rem; }
+
+  /* WA float */
+  .wpp-float { width: 44px; height: 44px; font-size: 19px; bottom: 14px; right: 14px; }
 }
