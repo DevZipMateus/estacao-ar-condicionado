@@ -273,6 +273,8 @@ a { text-decoration: none; color: inherit; }
 }
 .nav-cta:hover { background: var(--amber-dark) !important; color: #fff !important; }
 
+.nav-vitrine { color: var(--sky-light) !important; font-weight: 700 !important; }
+
 /* HAMBURGER */
 .hamburger {
   display: none;
@@ -829,7 +831,7 @@ a { text-decoration: none; color: inherit; }
 /* ── WA FLOAT ────────────────────────────────────────────────── */
 .wpp-float {
   position: fixed;
-  bottom: 28px; right: 28px;
+  bottom: calc(28px + env(safe-area-inset-bottom, 0px)); right: 28px;
   z-index: 800;
   width: 56px; height: 56px;
   background: #25D366;
@@ -961,6 +963,11 @@ a { text-decoration: none; color: inherit; }
   .servicos-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
+/* 1024px – 1280px: nav compacto */
+@media (min-width: 1024px) and (max-width: 1280px) {
+  .header-nav { gap: 18px; }
+}
+
 /* ≤1199px — laptop pequeno */
 @media (max-width: 1199px) {
   .diferenciais-grid { grid-template-columns: repeat(2, 1fr); }
@@ -969,6 +976,10 @@ a { text-decoration: none; color: inherit; }
 
 /* ≤1023px — tablet landscape */
 @media (max-width: 1023px) {
+  /* Header */
+  .header-nav { display: none; }
+  .hamburger  { display: flex; }
+
   .sobre-grid   { grid-template-columns: 1fr; gap: 40px; }
   .contato-grid { grid-template-columns: 1fr; gap: 40px; }
   .contato-mapa { height: 320px; }
@@ -999,8 +1010,6 @@ a { text-decoration: none; color: inherit; }
   .section { padding: 64px 0; }
 
   /* Header */
-  .header-nav   { display: none; }
-  .hamburger    { display: flex; }
   .header-inner { height: 64px; }
 
   /* Hero */
@@ -1041,6 +1050,7 @@ a { text-decoration: none; color: inherit; }
   .diferenciais-grid { grid-template-columns: 1fr; gap: 14px; }
   .depo-grid         { max-width: 100%; }
 
+  .hero-btns  { flex-direction: column; align-items: center; }
   .hero-stats { gap: 20px; }
   .hero-badge { font-size: .74rem; padding: 5px 12px; }
 
@@ -1106,7 +1116,7 @@ a { text-decoration: none; color: inherit; }
   .btn-sky { font-size: .87rem; padding: 12px 20px; }
 
   /* WA float */
-  .wpp-float { width: 48px; height: 48px; font-size: 21px; }
+  .wpp-float { bottom: calc(20px + env(safe-area-inset-bottom, 0px)); width: 48px; height: 48px; font-size: 21px; }
 }
 
 /* ≤360px — mobile pequeno */
@@ -1160,5 +1170,5 @@ a { text-decoration: none; color: inherit; }
   .footer-bottom  { font-size: .72rem; }
 
   /* WA float */
-  .wpp-float { width: 44px; height: 44px; font-size: 19px; bottom: 14px; right: 14px; }
+  .wpp-float { width: 44px; height: 44px; font-size: 19px; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); right: 14px; }
 }

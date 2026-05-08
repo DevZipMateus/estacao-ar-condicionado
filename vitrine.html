@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vitrine — Estação do Ar Condicionado</title>
+  <meta name="description" content="Confira nossa vitrine de produtos e serviços online — Estação do Ar Condicionado, especialistas em A/C automotivo no Distrito Federal.">
+
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root {
+      --navy:      #0A1628;
+      --sky:       #0EA5E9;
+      --sky-light: #38BDF8;
+      --amber:     #F59E0B;
+      --amber-dark:#D97706;
+      --white:     #FFFFFF;
+      --font-head: 'Montserrat', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --trans:     .2s ease;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      font-family: var(--font-body);
+      background: var(--navy);
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* ===== HEADER ===== */
+    #header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 80px;
+      z-index: 900;
+      background: rgba(10,22,40,.97);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      display: flex;
+      align-items: center;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 90%;
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+
+    .header-logo img { height: 52px; width: auto; display: block; }
+
+    .header-nav { display: flex; align-items: center; gap: 28px; }
+    .header-nav a {
+      color: rgba(255,255,255,.72);
+      font-size: .86rem;
+      font-weight: 500;
+      letter-spacing: .03em;
+      transition: color var(--trans);
+    }
+    .header-nav a:hover { color: var(--white); }
+    .nav-vitrine-active { color: var(--amber) !important; font-weight: 700 !important; }
+    .nav-vitrine        { color: var(--sky-light) !important; }
+
+    .nav-cta {
+      background: var(--amber);
+      color: var(--navy) !important;
+      font-weight: 700 !important;
+      font-size: .83rem !important;
+      padding: 9px 20px;
+      border-radius: 8px;
+      transition: background var(--trans) !important;
+    }
+    .nav-cta:hover { background: var(--amber-dark) !important; color: #fff !important; }
+
+    /* HAMBURGER */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 6px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px; height: 2px;
+      background: #fff;
+      border-radius: 2px;
+      transition: all .3s;
+    }
+
+    /* MENU MOBILE */
+    #navMenu {
+      position: fixed;
+      top: 0; right: -100%;
+      width: min(280px, 80vw);
+      height: 100dvh;
+      background: var(--navy);
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      padding: 80px 28px 40px;
+      gap: 4px;
+      transition: right .35s cubic-bezier(.22,1,.36,1);
+      border-left: 1px solid rgba(255,255,255,.07);
+    }
+    #navMenu.open { right: 0; }
+
+    .nav-close {
+      position: absolute;
+      top: 20px; right: 20px;
+      background: rgba(255,255,255,.08);
+      border: none;
+      color: #fff;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      font-size: 14px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background var(--trans);
+    }
+    .nav-close:hover { background: rgba(255,255,255,.16); }
+
+    #navMenu a {
+      color: rgba(255,255,255,.75);
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 13px 0;
+      border-bottom: 1px solid rgba(255,255,255,.07);
+      transition: color var(--trans);
+    }
+    #navMenu a:last-child { border-bottom: none; }
+    #navMenu a:hover { color: var(--sky-light); }
+    #navMenu .mob-cta {
+      margin-top: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--amber);
+      color: var(--navy) !important;
+      font-weight: 700;
+      padding: 14px;
+      border-radius: 8px;
+      border-bottom: none !important;
+    }
+    #navMenu .mob-cta:hover { background: var(--amber-dark); color: #fff !important; }
+
+    #navOverlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.55);
+      z-index: 999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .35s;
+    }
+    #navOverlay.active { opacity: 1; pointer-events: auto; }
+
+    /* ===== IFRAME ===== */
+    #vitrine-frame {
+      position: fixed;
+      left: 0;
+      right: 0;
+      width: 100%;
+      border: none;
+      display: block;
+      background: #fff;
+    }
+
+    /* ===== BADGE INFERIOR ===== */
+    #badge-wrapper {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      height: 63px;
+      z-index: 500;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .header-nav { display: none; }
+      .hamburger  { display: flex; }
+      #header { height: 64px; }
+    }
+    @media (max-width: 480px) {
+      #header { height: 60px; }
+      .header-logo img { height: 40px; }
+    }
+    @media (max-width: 360px) {
+      .header-logo img { height: 34px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header id="header">
+  <div class="header-inner">
+    <a href="index.html" class="header-logo">
+      <img src="images/logo.png" alt="Estação do Ar Condicionado">
+    </a>
+    <nav class="header-nav">
+      <a href="index.html#servicos">Serviços</a>
+      <a href="index.html#sobre">Sobre</a>
+      <a href="index.html#diferenciais">Diferenciais</a>
+      <a href="index.html#historia">História</a>
+      <a href="index.html#depoimentos">Depoimentos</a>
+      <a href="vitrine.html" class="nav-vitrine-active">Vitrine</a>
+      <a href="index.html#contato" class="nav-cta">Solicitar orçamento</a>
+    </nav>
+    <button class="hamburger" id="menuToggle" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Menu mobile -->
+<nav id="navMenu">
+  <button class="nav-close" id="navClose" aria-label="Fechar menu"><i class="fas fa-times"></i></button>
+  <a href="index.html#servicos">Serviços</a>
+  <a href="index.html#sobre">Sobre</a>
+  <a href="index.html#diferenciais">Diferenciais</a>
+  <a href="index.html#historia">História</a>
+  <a href="index.html#depoimentos">Depoimentos</a>
+  <a href="vitrine.html" style="color:var(--amber);font-weight:700;">Vitrine</a>
+  <a href="index.html#contato" class="mob-cta"><i class="fas fa-calendar-check"></i> Solicitar orçamento</a>
+</nav>
+<div id="navOverlay"></div>
+
+<!-- ===== IFRAME VITRINE ===== -->
+<iframe
+  id="vitrine-frame"
+  src="https://estacaodoar.egestor.com.br/vitrine/"
+  title="Vitrine — Estação do Ar Condicionado"
+  allowfullscreen
+></iframe>
+
+<!-- ===== BADGE INFERIOR ===== -->
+<div id="badge-wrapper">
+  <div id="montesite-footer-badge"></div>
+  <script src="https://vaabpicspdbolvutnscp.supabase.co/functions/v1/get-footer-iframe"></script>
+</div>
+
+<script>
+  var BADGE_H = 63;
+
+  function setIframeHeight() {
+    var header = document.getElementById('header');
+    var headerH = header ? header.offsetHeight : 80;
+    var frame   = document.getElementById('vitrine-frame');
+    frame.style.top    = headerH + 'px';
+    frame.style.height = (window.innerHeight - headerH - BADGE_H) + 'px';
+  }
+
+  setIframeHeight();
+  window.addEventListener('resize', setIframeHeight);
+
+  // Menu mobile
+  var menuToggle = document.getElementById('menuToggle');
+  var navMenu    = document.getElementById('navMenu');
+  var navOverlay = document.getElementById('navOverlay');
+  var navClose   = document.getElementById('navClose');
+
+  function openMenu()  { navMenu.classList.add('open'); navOverlay.classList.add('active'); menuToggle.classList.add('active'); }
+  function closeMenu() { navMenu.classList.remove('open'); navOverlay.classList.remove('active'); menuToggle.classList.remove('active'); }
+
+  menuToggle.addEventListener('click', function() { navMenu.classList.contains('open') ? closeMenu() : openMenu(); });
+  navClose.addEventListener('click', closeMenu);
+  navOverlay.addEventListener('click', closeMenu);
+  navMenu.querySelectorAll('a').forEach(function(l) { l.addEventListener('click', closeMenu); });
+</script>
+</body>
+</html>
